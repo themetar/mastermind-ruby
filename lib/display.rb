@@ -13,8 +13,18 @@ module Display
     6 => pastel.black.on_cyan(" 6 ")
   }
 
+  FEEDBACK_MAP = {
+    :correct => pastel.black.on_white(" • "),
+    :partial => pastel.red.on_white(" • ")
+  }
+
   # Converts array of digits to colored string
   def self.colorize_code(code)
     code.collect { |c| DIGIT_MAP[c] || c.to_s }.join
-  end  
+  end
+
+  # Converts array of feedback symbols to string of dots
+  def self.colorize_feedback(feedback)
+    feedback.collect { |f| FEEDBACK_MAP[f] || f.to_s }.join
+  end
 end

@@ -14,22 +14,25 @@ class Gameloop
     turn = 1
     while @mastermind.tries > 0
       puts
+
       puts "Turn ##{turn}, #{@mastermind.tries} tries left"
       player_guess = @player.next_guess
       feedback = @mastermind.guess(player_guess)
-      puts Display.colorize_code(player_guess), feedback.join(', ')
+      puts
+
+      puts "#{Display.colorize_code(player_guess)}\t#{Display.colorize_feedback(feedback)}"
 
       turn += 1
 
       if feedback.length == Mastermind::PHRASE_SIZE && feedback.all?(:correct)
         puts 'Player won'
-        puts "correct code", Display.colorize_code(@mastermind.secret)
+        puts "#{Display.colorize_code(@mastermind.secret)} was the secret code!"
         break
       end
 
       if @mastermind.tries.zero?
         puts "Player lost"
-        puts "correct code", Display.colorize_code(@mastermind.secret)
+        puts "The secret code was #{Display.colorize_code(@mastermind.secret)}"
       end
     end
   end
