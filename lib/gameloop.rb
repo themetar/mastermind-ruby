@@ -1,4 +1,5 @@
 require_relative 'core/mastermind'
+require_relative 'display'
 
 class Gameloop
   def initialize(mastermind, player)
@@ -16,19 +17,19 @@ class Gameloop
       puts "Turn ##{turn}, #{@mastermind.tries} tries left"
       player_guess = @player.next_guess
       feedback = @mastermind.guess(player_guess)
-      puts player_guess.join(' '), feedback.join(', ')
+      puts Display.colorize_code(player_guess), feedback.join(', ')
 
       turn += 1
 
       if feedback.length == Mastermind::PHRASE_SIZE && feedback.all?(:correct)
         puts 'Player won'
-        puts "correct code", @mastermind.secret
+        puts "correct code", Display.colorize_code(@mastermind.secret)
         break
       end
 
       if @mastermind.tries.zero?
         puts "Player lost"
-        puts "correct code", @mastermind.secret
+        puts "correct code", Display.colorize_code(@mastermind.secret)
       end
     end
   end
