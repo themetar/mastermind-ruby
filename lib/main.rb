@@ -4,6 +4,7 @@ require 'bundler/setup'
 require 'pastel'
 require_relative 'core/mastermind'
 require_relative 'players/human'
+require_relative 'players/computer'
 require_relative 'gameloop'
 
 # prompt = TTY::Prompt.new
@@ -15,4 +16,4 @@ pastel = Pastel.new
 
 puts pastel.black.on_red('Mastermind')
 
-Gameloop.new(Mastermind.new, Human.new).run
+Gameloop.new(Mastermind.new, Computer.new).run
