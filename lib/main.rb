@@ -26,7 +26,7 @@ loop do
     player = Human.new
   when :make
     player = Computer.new
-    secret = Human.new.next_guess # a bit of a hack
+    secret = Human.new.next_guess(nil) # a bit of a hack
   when :exit
     sure = prompt.yes?('Are you sure you want to exit?', default: false)
     exit if sure

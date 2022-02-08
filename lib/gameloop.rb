@@ -12,12 +12,13 @@ class Gameloop
   # the feedback result is displayed and checked to see if the game has ended by winning.
   def run
     turn = 1
+    feedback = nil
     while @mastermind.tries > 0
       puts
       puts "Turn ##{turn}, #{@mastermind.tries} tries left"
 
       puts
-      player_guess = @player.next_guess
+      player_guess = @player.next_guess(feedback)
       feedback = @mastermind.guess(player_guess)
 
       puts "#{Display.colorize_code(player_guess)}\t#{Display.colorize_feedback(feedback)}"

@@ -3,7 +3,7 @@ require_relative '../core/mastermind'
 
 class Human
   # Returns the player's guess in the form of an integer array
-  def next_guess
+  def next_guess(_)
     prompt = TTY::Prompt.new
 
     # prompt the user for a guess
