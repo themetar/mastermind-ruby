@@ -34,6 +34,7 @@ loop do
     secret = Human.new.next_guess(nil) # a bit of a hack
   when :help
     Display.print_help
+    puts
     prompt.keypress('Press any key to continue...')
     next # restart loop
   when :exit
