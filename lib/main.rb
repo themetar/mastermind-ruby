@@ -10,6 +10,8 @@ require_relative 'gameloop'
 prompt = TTY::Prompt.new
 pastel = Pastel.new
 
+Display.print_help
+
 loop do
   puts
   puts "Let's play #{pastel.bold('Mastermind')}!"
