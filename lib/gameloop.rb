@@ -27,14 +27,14 @@ class Gameloop
 
       if feedback.length == Mastermind::PHRASE_SIZE && feedback.all?(:correct)
         puts
-        puts 'Player won!'
+        puts "#{@player.form_of_address} succeeded!"
         puts "#{Display.colorize_code(@mastermind.secret)} was the secret code!"
         break
       end
 
       if @mastermind.tries.zero?
         puts
-        puts "Player lost"
+        puts "#{@player.form_of_address} failed."
         puts "The secret code was #{Display.colorize_code(@mastermind.secret)}"
       end
     end

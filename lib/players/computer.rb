@@ -34,5 +34,9 @@ class Computer
     sleep 0.75 # dramatic pause
     
     guess
-  end  
+  end
+
+  def form_of_address
+    "Computer"
+  end
 end

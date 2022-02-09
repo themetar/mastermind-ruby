@@ -15,4 +15,8 @@ class Human
     # convert the input string to an array of digits 
     guess.split('').map(&:to_i)
   end
+
+  def form_of_address
+    "You"
+  end
 end
