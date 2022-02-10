@@ -12,7 +12,7 @@ One player, the code maker, thinks of code, and the code breaker needs to guess 
 
 ## Run 
 
-Prerequisites: Ruby, Bundler
+Prerequisites: [Ruby](https://www.ruby-lang.org/en/), [Bundler](https://bundler.io/)
 
 1. Get the code
 2. run `bundle install` inside project directory
