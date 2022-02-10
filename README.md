@@ -2,6 +2,8 @@
 
 *Command-line Mastermind game*
 
+[![Run on Repl.it](https://repl.it/badge/github/themetar/mastermind-ruby)](https://replit.com/@themetar/mastermind-ruby)
+
 ## About game
 
 [Mastermind](https://en.wikipedia.org/wiki/Mastermind_(board_game)) is a code breaking game. The objective is to break (guess) a secret code comprised of 4 color-coded digits from 1 to 6.
